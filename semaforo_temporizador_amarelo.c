@@ -9,7 +9,7 @@
 // Variável global para controlar o estado do semáforo
 typedef enum {
     VERMELHO,
-    AZUL, // Substitui AZUL por AMARELO
+    AMARELO, 
     VERDE
 } Luzes_Semaforo;
 
@@ -32,9 +32,9 @@ bool timer_callback(struct repeating_timer *t) {
             // Liga o LED vermelho e verde simultaneamente para simular o amarelo
             gpio_put(LED_VERMELHO, 1);
             gpio_put(LED_VERDE, 1);
-            led_atual = AZUL;
+            led_atual = AMARELO;
             break;
-        case AZUL:
+        case AMARELO:
             // Liga o LED verde
             gpio_put(LED_VERDE, 1);
             led_atual = VERDE;
@@ -76,7 +76,7 @@ int main() {
             case VERMELHO:
                 printf("LEDs desligados: Verde | LED ligado: Vermelho\n");
                 break;
-            case AZUL:
+            case AMARELO:
                 printf("LEDs desligados: Nenhum | LEDs ligados: Vermelho e Verde (Amarelo)\n");
                 break;
             case VERDE:
