@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "author": "Moisés Nascimento Santana",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 6.35,
+      "left": 61.15,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": 71.2,
+      "left": -114.1,
+      "attrs": { "common": "cathode" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 157.55,
+      "left": -38.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 128.75,
+      "left": -38.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 186.35,
+      "left": -38.4,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP12", "r1:2", "blue", [ "h0" ] ],
+    [ "rgb1:B", "r1:1", "blue", [ "v48", "h1.6" ] ],
+    [ "rgb1:G", "r2:1", "green", [ "v19.2", "h1.3" ] ],
+    [ "rgb1:COM", "pico:GND.4", "black", [ "v0" ] ],
+    [ "r2:2", "pico:GP11", "green", [ "v0", "h8.4", "v19.2" ] ],
+    [ "pico:GP13", "r3:2", "red", [ "h-38.4", "v19.24" ] ],
+    [ "rgb1:R", "r3:1", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
