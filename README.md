@@ -47,14 +47,13 @@ add_repeating_timer_ms()
 
 A função add_repeating_timer_ms() é usada para configurar um temporizador que dispara repetidamente em um intervalo de tempo especificado. No código, ela é configurada para chamar a função de callback a cada 3000 milissegundos (3 segundos).
 Parâmetros:
+**Intervalo de tempo:** O tempo em milissegundos entre cada chamada da função de callback (no caso, 3000 ms).
 
-    Intervalo de tempo: O tempo em milissegundos entre cada chamada da função de callback (no caso, 3000 ms).
+**Função de callback:** A função que será executada sempre que o temporizador disparar (timer_callback no código).
 
-    Função de callback: A função que será executada sempre que o temporizador disparar (timer_callback no código).
+**Dados adicionais:** Um ponteiro para dados adicionais que podem ser passados para a função de callback (neste caso, NULL, pois não são necessários).
 
-    Dados adicionais: Um ponteiro para dados adicionais que podem ser passados para a função de callback (neste caso, NULL, pois não são necessários).
-
-    Estrutura do temporizador: Uma estrutura do tipo repeating_timer que armazena o estado do temporizador.
+**Estrutura do temporizador:** Uma estrutura do tipo repeating_timer que armazena o estado do temporizador.
 
 ## Demonstração no Wokwi
 
